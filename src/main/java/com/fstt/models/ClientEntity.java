@@ -5,10 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
-@Table(name= "clients")
+@Table(name= ("clients"))
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,4 +24,7 @@ public class ClientEntity implements Serializable {
     @Column(nullable = false)
     private String lastName;
     private String telephone;
+
+    @OneToMany(mappedBy = "client" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+    private List<FactureEntity> factures;
 }
