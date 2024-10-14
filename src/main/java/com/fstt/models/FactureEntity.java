@@ -29,5 +29,5 @@ public class FactureEntity implements Serializable {
     private ClientEntity client;
 
     @OneToMany(mappedBy = "facture", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<LinkFactureEntity> linkFactures;;
+    private List<LinkFactureEntity> linkFactures;
 }
