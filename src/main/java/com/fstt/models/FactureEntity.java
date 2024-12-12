@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -23,7 +24,7 @@ public class FactureEntity implements Serializable {
     private Integer ref;
 
     @Column(nullable = false, name = ("date_creation_facture"))
-    private String date;
+    private Date date;
 
     @ManyToOne
     private ClientEntity client;
